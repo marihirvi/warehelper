@@ -1,0 +1,2 @@
+GET  https://bad-api-assignment.reaktor.com/availability/xoon
+x-force-error-mode : all

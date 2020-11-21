@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import badApi from './services/badApi'
+import PageContainer from './components/PageContainer'
+import helper from './utils/helper'
 
-function App() {
+const App = () => {
+
+  const [products, setProducts] = useState([])
+  const [availabilities, setAvailabilities] = useState([])
+
+  const [loadingProducts, setLoadingProducts] = useState(true)
+  const [loadingAvailability, setLoadingAvailability] = useState(true)
+
+  useEffect(() => {
+
+    const init = async () => {
+      const loadProducts = await badApi.getAllProducts(['shirts', 'jackets', 'accessories'])
+      setProducts(loadProducts)
+      setLoadingProducts(false)
+      const manufacturers = helper.listManufacturers(loadProducts)
+      const loadAvailabilities = await badApi.getAllAvailabilities(manufacturers)
+      setAvailabilities(loadAvailabilities)
+      setLoadingAvailability(false)
+    }
+
+    init();
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <PageContainer
+      products={products}
+      availabilities={availabilities}
+      loadingProducts={loadingProducts}
+      loadingAvailability={loadingAvailability} />
+  )
 }
 
 export default App;
