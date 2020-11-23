@@ -4,7 +4,7 @@ import _ from 'lodash';
 import Col from 'react-bootstrap/Col';
 import ProductCard from './ProductCard';
 
-const ProductList = ({ currentProducts, loadingAvailability, availabilities }) => {
+const ProductCardList = ({ currentProducts, loadingAvailability, availabilities }) => {
   const getProductAvailability = (product) => {
     if (loadingAvailability === false) {
       return _.find(availabilities, (a) => a.id === product.id).availability;
@@ -30,4 +30,4 @@ const ProductList = ({ currentProducts, loadingAvailability, availabilities }) =
   );
 };
 
-export default ProductList;
+export default ProductCardList;

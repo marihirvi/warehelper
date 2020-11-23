@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ProductList from './ProductList';
+import ProductCardList from './ProductCardList';
 import ProductPagination from './ProductPagination';
 import ErrorMessage from './ErrorMessage';
 
@@ -37,7 +37,7 @@ const ProductPage = ({
           </Col>
         </Row>
         <Row>
-          <ProductList
+          <ProductCardList
             currentProducts={currentProducts}
             loadingAvailability={loadingAvailability}
             availabilities={availabilities}
@@ -62,7 +62,7 @@ const ProductPage = ({
           <h2>
             {`All ${category}`}
           </h2>
-          <ErrorMessage message="Sorry! Something went wrong. Try checking the URL or reload the page." />
+          <ErrorMessage message="Sorry! Something went wrong when loading the products. Try checking the URL or reloading the page." />
         </Col>
       </Row>
     </Container>
