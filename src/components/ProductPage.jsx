@@ -62,7 +62,7 @@ const ProductPage = ({
           <h2>
             {`All ${category}`}
           </h2>
-          <ErrorMessage message="Sorry! Something went wrong when loading the products. Try checking the URL or reloading the page." />
+          <ErrorMessage message="Sorry! Something went wrong. Try checking the URL or reloading the page." />
         </Col>
       </Row>
     </Container>
