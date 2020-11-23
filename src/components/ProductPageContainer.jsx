@@ -28,6 +28,15 @@ const ProductPageContainer = ({
   }
   return (
     <Switch>
+      <Route exact path={`${path}/`}>
+        <ProductPage
+          url={url}
+          category={category}
+          products={products}
+          availabilities={availabilities}
+          loadingAvailability={loadingAvailability}
+        />
+      </Route>
       <Route path={`${path}/:page`}>
         <ProductPage
           url={url}

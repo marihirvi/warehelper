@@ -1,8 +1,10 @@
 import axios from 'axios';
 import _ from 'lodash';
-import helper from '../utils/helper';
+import { cleanUpAvailability } from '../utils/helper';
 
 const baseUrl = 'https://bad-api-assignment.reaktor.com';
+
+// products
 
 const getProducts = async (category) => {
   const request = await axios.get(`${baseUrl}/products/${category}`, {
@@ -12,6 +14,18 @@ const getProducts = async (category) => {
   });
   return request.data;
 };
+
+const getAllProducts = async (categories) => {
+  try {
+    const promises = await categories.map(async (category) => getProducts(category));
+    const productsByCategory = await Promise.all(promises);
+    return _.flatten(productsByCategory);
+  } catch (error) {
+    return [];
+  }
+};
+
+// availability
 
 const getAvailability = async (manufacturer) => {
   const request = await axios.get(`${baseUrl}/availability/${manufacturer}`, {
@@ -25,20 +39,15 @@ const getAvailability = async (manufacturer) => {
   return getAvailability(manufacturer);
 };
 
-const getAllProducts = async (categories) => {
-  const promises = await categories.map(async (category) => getProducts(category));
-
-  const productsByCategory = await Promise.all(promises);
-  return _.flatten(productsByCategory);
-};
-
 const getAllAvailabilities = async (manufacturers) => {
-  const promises = await manufacturers.map(async (manufacturer) => getAvailability(manufacturer));
-
-  const availabilityData = await Promise.all(promises);
-  const allAvailabilities = _.flatten(availabilityData.map((item) => item.response));
-  const cleanAvailabilityData = helper.cleanUpAvailability(allAvailabilities);
-  return cleanAvailabilityData;
+  try {
+    const promises = await manufacturers.map(async (manufacturer) => getAvailability(manufacturer));
+    const availabilityData = await Promise.all(promises);
+    const allAvailabilities = _.flatten(availabilityData.map((item) => item.response));
+    return cleanUpAvailability(allAvailabilities);
+  } catch (error) {
+    return [];
+  }
 };
 
 export default { getAllAvailabilities, getAllProducts };

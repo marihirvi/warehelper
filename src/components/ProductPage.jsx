@@ -20,7 +20,7 @@ const ProductPage = ({
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
-  if (pageNumber > 0 && pageNumber <= numberOfPages) {
+  if (products.length >= 1 && pageNumber > 0 && pageNumber <= numberOfPages) {
     return (
       <Container>
         <Row>
@@ -62,7 +62,7 @@ const ProductPage = ({
           <h2>
             {`All ${category}`}
           </h2>
-          <ErrorMessage message="Sorry! The page you are looking for cannot be found." />
+          <ErrorMessage message="Sorry! Something went wrong. Try checking the URL or reload the page." />
         </Col>
       </Row>
     </Container>

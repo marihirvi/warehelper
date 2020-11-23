@@ -2,6 +2,6 @@
 import React from 'react';
 import Alert from 'react-bootstrap/Alert';
 
-const ErrorMessage = ({ message }) => (<Alert variant="danger">{message}</Alert>);
+const ErrorMessage = ({ message }) => (<Alert variant="danger">{String(message)}</Alert>);
 
 export default ErrorMessage;

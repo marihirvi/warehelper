@@ -2,25 +2,23 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
-
-const helper = require('../utils/helper');
+import { availabilityColor } from '../utils/helper';
 
 const ProductCard = ({
   manufacturer, name, colors, price, availability, id, type,
 }) => {
   const colorString = colors.join(', ');
-  const badgeColor = helper.availabilityColor(availability);
-  const availString = helper.availabilityText(availability);
+  const badgeColor = availabilityColor(availability);
 
   return (
-    <Card bg="light" style={{ 'margin-bottom': '5px' }}>
+    <Card bg="light">
       <Card.Body>
         <Card.Subtitle>
           {`${name} ${type} by ${manufacturer} • ${price}€ • ${colorString}`}
         </Card.Subtitle>
       </Card.Body>
       <Card.Footer>
-        <Badge variant={badgeColor}>{availString}</Badge>
+        <Badge variant={badgeColor}>{availability}</Badge>
         <small>
           {`   Product ID: ${id}`}
         </small>

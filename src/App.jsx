@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import badApi from './services/badApi';
 import PageContainer from './components/PageContainer';
-import helper from './utils/helper';
+import { listManufacturers } from './utils/helper';
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -15,7 +15,7 @@ const App = () => {
       const loadProducts = await badApi.getAllProducts(['shirts', 'jackets', 'accessories']);
       setProducts(loadProducts);
       setLoadingProducts(false);
-      const manufacturers = helper.listManufacturers(loadProducts);
+      const manufacturers = listManufacturers(loadProducts);
       const loadAvailabilities = await badApi.getAllAvailabilities(manufacturers);
       setAvailabilities(loadAvailabilities);
       setLoadingAvailability(false);
