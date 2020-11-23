@@ -7,14 +7,16 @@ This repository contains the code for my solution to Reaktor's assignment for ju
 The brief was to create a simple product listing app for warehouse workers:
 > Your client is a clothing brand that is looking for a simple web app to use in their warehouses. To do their work efficiently, the warehouse workers need a fast and simple listing page per product category, where they can check simple product and availability information from a single UI.
 
-I built the app as a React web app using JavaScript. Rather than the UI, the focus was on creating an app that works with two non-optimal legacy APIs. However, I was interested in learning to use a React component library, so I used the React Boostrap front-end framework. As an extra feature, I implemented a Bootstrap-based pagination that works together with the React router.
+The WareHelper app is a React web app built with JavaScript. Rather than the UI, the focus was on creating an app that works with two non-optimal [legacy APIs](http://bad-api-assignment.reaktor.com/). However, I was also interested in learning to use a React component library, so I decided to use the React Boostrap front-end framework. As an extra feature, I implemented a React Bootstrap based pagination that works together with the React router.
 
 ## Built with
 
-* [create-react-app](https://github.com/facebook/create-react-app)
-* [React Bootstrap](https://react-bootstrap.github.io/)
-* [Axios](https://github.com/axios/axios)
-* [Lodash](https://github.com/lodash/lodash)
-* [ESLint](https://eslint.org/)
+* [create-react-app](https://github.com/facebook/create-react-app) - Set up a modern web app by running one command.
+* [React Bootstrap](https://react-bootstrap.github.io/) - Bootstrap components built with React.
+* [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js.
+* [Lodash](https://github.com/lodash/lodash) - A JavaScript utility library delivering consistency, modularity, performance, & extras.  
 
+## Code style and tests
+
+The application follows the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with [ESLint](https://eslint.org/). Automated tests have been written for some of the components with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) and [Jest](https://github.com/facebook/jest) and can be run with the `npm test` command.
 
