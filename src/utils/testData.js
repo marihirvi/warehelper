@@ -1,4 +1,4 @@
-const testData = [
+const productData = [
   {
     id: 'f33561de3a864f951a',
     type: 'jackets',
@@ -1508,5 +1508,5 @@ const testData = [
 ];
 
 module.exports = {
-  testData,
+  productData,
 };

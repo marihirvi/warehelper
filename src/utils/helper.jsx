@@ -10,7 +10,7 @@ export const listManufacturers = (productData) => {
   return manufacturers;
 };
 
-export const getAvailability = (payload) => {
+export const getAvailabilityInfo = (payload) => {
   const s = String(payload);
   if (_.includes(s, '>INSTOCK<')) { return 'IN STOCK'; }
   if (_.includes(s, '>OUTOFSTOCK<')) { return 'OUT OF STOCK'; }
@@ -19,7 +19,7 @@ export const getAvailability = (payload) => {
 };
 
 // eslint-disable-next-line max-len
-export const cleanUpAvailability = (data) => data.map((item) => ({ id: item.id.toLowerCase(), availability: getAvailability(item.DATAPAYLOAD) }));
+export const cleanUpAvailability = (data) => data.map((item) => ({ id: item.id.toLowerCase(), availability: getAvailabilityInfo(item.DATAPAYLOAD) }));
 
 export const availabilityColor = (availability) => {
   switch (availability) {
