@@ -1,6 +1,7 @@
 # WareHelper
 
-This repository contains the code for my solution to Reaktor's assignment for junior developers for Spring 2021. The application is running on [Heroku](https://rocky-falls-72380.herokuapp.com/).
+This repository contains the code for my solution to Reaktor's assignment for junior developers for Spring 2021.    
+The application is currently running on [Heroku](https://rocky-falls-72380.herokuapp.com/).
 
 ## Assignment brief
 
@@ -16,7 +17,7 @@ The WareHelper app is a React web app built with JavaScript. Rather than the UI,
 * [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js.
 * [Lodash](https://github.com/lodash/lodash) - A JavaScript utility library delivering consistency, modularity, performance, & extras.  
 
-## Code style and tests
+## Tests and code style
 
-The application follows the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with [ESLint](https://eslint.org/). Automated tests have been written for some of the components with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) and [Jest](https://github.com/facebook/jest) and can be run with the `npm test` command.
+Automated tests have been written for some of the components with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) and [Jest](https://github.com/facebook/jest) and can be run with the `npm test` command. The application code follows the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with [ESLint](https://eslint.org/). 
 
