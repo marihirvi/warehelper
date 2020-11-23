@@ -8,7 +8,7 @@ The application is currently running on [Heroku](https://rocky-falls-72380.herok
 The brief was to create a simple product listing app for warehouse workers:
 > Your client is a clothing brand that is looking for a simple web app to use in their warehouses. To do their work efficiently, the warehouse workers need a fast and simple listing page per product category, where they can check simple product and availability information from a single UI.
 
-My response to the brief is **WareHelper**, a React web app built with JavaScript. The focus of the assignment was on creating an app that works with two non-optimal [legacy APIs](http://bad-api-assignment.reaktor.com/). I was also interested in learning to use a React component library and decided to build my project using the React Bootstrap front-end framework. As an extra feature, I implemented a React Bootstrap based pagination that works together with the React router.
+The focus of the assignment was on creating an app that works with two non-optimal [legacy APIs](http://bad-api-assignment.reaktor.com/). My response to the brief is **WareHelper**, a React web app built with JavaScript. Beyond working with the API, I was also interested in learning to use a React component library and decided to build my project using the React Bootstrap front-end framework. As an extra feature, I implemented a React Bootstrap based pagination that works together with the React router.
 
 ## Built with
 
